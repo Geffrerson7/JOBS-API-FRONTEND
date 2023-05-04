@@ -4,9 +4,7 @@ import ListHeader from "./components/ListHeader";
 
 const App = () => {
   return (
-    // <div className="app">
-    //   <ListHeader listName={'💻Postulated Jobs list'}/>
-    // </div>
+    
     <AppRouter />
   )
 }

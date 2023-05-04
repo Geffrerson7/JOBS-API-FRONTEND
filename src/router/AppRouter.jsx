@@ -18,7 +18,7 @@ const AppRouter = () => {
           path="/web-portals"
           element={authTokens ? <WebPortals /> : <Navigate to="/login" />}
         />
-
+        
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

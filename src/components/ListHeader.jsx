@@ -11,10 +11,10 @@ const ListHeader = ({listName}) => {
 
   return (
     <div className='list-header'>
-      <h1>{listName}</h1>
+      <h1 className='text-2xl'>{listName}</h1>
       <div className='button-container'>
-        <button className='create'>ADD NEW</button>
-        <button className='signout' onClick={signOut}>SIGN OUT</button>
+        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>ADD NEW</button>
+        <button className='bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={signOut}>SIGN OUT</button>
       </div>
     </div>
   )
