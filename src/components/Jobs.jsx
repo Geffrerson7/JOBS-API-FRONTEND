@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Layout from "./Layout";
 import ListHeader from "./ListHeader";
 import refreshToken from "../services/refreshtoken";
-import Card from "./Card";
+import JobCard from "./JobCard";
+import axios from "axios";
 
 const Jobs = () => {
   const userData = JSON.parse(localStorage.getItem("userData"));
@@ -25,15 +26,14 @@ const Jobs = () => {
         setJobs(cachedData.jobs);
       } else {
         try {
-          const response = await fetch(BASE_URL, {
-            method: "GET",
+          const response = await axios.get(BASE_URL, {
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
               Authorization: "Bearer " + accessToken,
             },
           });
-          const data = await response.json();
+          const data = response.data;
           setCachedData({ jobs: data.results });
           setJobs(data.results);
         } catch (error) {
@@ -48,11 +48,11 @@ const Jobs = () => {
   return (
     <Layout>
       <div className="app">
-        <ListHeader listName={"💻Postulated Jobs list"} />
+        <ListHeader listName={"💻 Postulated Jobs list"} />
       </div>
       <div className="mt-4">
       {jobs.map((job) => (
-        <Card key={job.id} job={job} />
+        <JobCard key={job.id} job={job} />
       ))}
       </div>
     </Layout>

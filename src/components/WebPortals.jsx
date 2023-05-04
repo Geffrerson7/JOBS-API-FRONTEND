@@ -5,7 +5,7 @@ const WebPortals = () => {
   return (
     <Layout>
       <div className="app">
-        <ListHeader listName={"💻Web Portals list"} />
+        <ListHeader listName={" 💻Web Portals list"} />
       </div>
     </Layout>
   );
