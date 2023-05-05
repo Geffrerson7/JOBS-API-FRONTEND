@@ -1,36 +1,44 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userDatas from "../services/userDatas";
+import axios from "axios";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const TOKEN_URL = "http://127.0.0.1:8000/user/token/";
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://127.0.0.1:8000/user/token/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
-        password: password,
-      }),
-    });
-    const data = await response.json();
-    if (response.status === 200) {
-      localStorage.setItem("authTokens", JSON.stringify(data));
-      const userData = await userDatas(data.user_id);
-      localStorage.setItem("userData", JSON.stringify(userData));
-      navigate("/");
-    } else {
+    try {
+      const response = await axios.post(
+        TOKEN_URL,
+        {
+          username: username,
+          password: password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = response.data;
+
+      if (response.status === 200) {
+        localStorage.setItem("authTokens", JSON.stringify(data));
+        const userData = await userDatas(data.user_id);
+        localStorage.setItem("userData", JSON.stringify(userData));
+        navigate("/");
+      }
+    } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "¡Correo o contraseña no válidos!",
+        text: "Invalid email or password!",
       });
+      console.log(error);
     }
   };
 
