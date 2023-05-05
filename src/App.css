@@ -42,4 +42,6 @@ body{
   @apply block text-gray-700 text-sm font-bold mb-2
 }
 
-
+.footer{
+  @apply shadow bg-gradient-to-r from-green-500 to-blue-500 h-md text-xs text-right pr-2 text-white relative
+}

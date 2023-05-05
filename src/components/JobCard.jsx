@@ -12,7 +12,7 @@ const JobCard = ({ job }) => {
       {/* Tema */}
       <div className="w-[60%]">
         <h3 className="text-lg flex items-center gap-4 mb-2">
-          {job.name}{" "}<span className="text-xs px-1 py-2 bg-purple-100 text-purple-600 font-bold rounded-md">Remote</span>
+          {job.name}{" "}<span className="text-xs px-1 py-2 bg-purple-100 text-purple-600 font-bold rounded-md">{job.modality}</span>
           <span className="text-xs px-1 py-2 bg-green-100 text-green-600 font-bold rounded-md"><a href={job.url}>Link</a></span>
         </h3>
         <p className="text-gray-500 text-xs">{job.company}</p>
@@ -22,7 +22,7 @@ const JobCard = ({ job }) => {
         <p className="text-blue-400 text-xs">{job.publicationDate}</p>
       </div>
       <div className="w-[10%] flex flex-col">
-        <button className="bg-teal-500 hover:bg-teal-500 text-white font-bold py-1 px-2 rounded-md mb-2 text-xs flex flex-row items-center"><AiFillEdit className="mr-2"/>Edit</button>
+        <button className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-1 px-2 rounded-md mb-2 text-xs flex flex-row items-center"><AiFillEdit className="mr-2"/>Edit</button>
         <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-md text-xs flex flex-row items-center"><MdDelete className="mr-2"/>Delete</button>
       </div>
     </div>
