@@ -49,11 +49,11 @@ const Jobs = () => {
     <Layout>
       <div className="app">
         <ListHeader listName={"💻 Postulated Jobs list"} />
-      </div>
-      <div className="mt-4">
-      {jobs.map((job) => (
-        <JobCard key={job.id} job={job} />
-      ))}
+        <div className="mt-4">
+          {jobs.map((job) => (
+            <JobCard key={job.id} job={job} />
+          ))}
+        </div>
       </div>
     </Layout>
   );
