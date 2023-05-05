@@ -42,6 +42,48 @@ body{
   @apply block text-gray-700 text-sm font-bold mb-2
 }
 
+/* Footer */
 .footer{
   @apply shadow bg-gradient-to-r from-green-500 to-blue-500 h-md text-xs text-right pr-2 text-white relative
+}
+
+/* Modal */
+.edit{
+  border: 1.5px, solid  rgb(141, 181, 145);
+  color: rgb(141, 181, 145);
+  text-transform: uppercase;
+}
+
+.edit:hover{
+  background-color: rgb(182, 223, 186);
+}
+
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 50px;
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0,0.05) 0 6px 24px 0, rgba(0,0,0,0.08) 0 0 0 1px;
+}
+
+.modal .form-title-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal .form-title-container button{
+  border: none;
+  background-color: transparent;
 }

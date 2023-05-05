@@ -43,7 +43,7 @@ const Jobs = () => {
     };
 
     fetchJobs();
-  }, [authTokens, cachedData]);
+  }, [authTokens, cachedData, userData]);
 
   return (
     <Layout>

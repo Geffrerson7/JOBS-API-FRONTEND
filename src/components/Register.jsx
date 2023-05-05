@@ -87,12 +87,13 @@ const Register = () => {
             >
               Sign Up
             </button>
-            <a
-              className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-              href="/login"
+            <button
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+              onClick={() => navigate("/login")}
             >
               Cancel
-            </a>
+            </button>
           </div>
         </form>
       </div>

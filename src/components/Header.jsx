@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import {MdWork} from 'react-icons/md'
+import { MdWork } from "react-icons/md";
 
 export default function Header() {
+  const userData = JSON.parse(localStorage.getItem("userData"));
   return (
     <header>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <MdWork className="fill-current h-8 w-8 mr-2"/>
+          <MdWork className="fill-current h-8 w-8 mr-2" />
           <span className="font-semibold text-xl tracking-tight">Jobs APP</span>
         </div>
         <div className="block lg:hidden">
@@ -34,6 +35,14 @@ export default function Header() {
               className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
             >
               Web Portals
+            </a>
+          </div>
+          <div>
+            <a
+              href="/"
+              className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+            >
+              {userData.username}
             </a>
           </div>
         </div>

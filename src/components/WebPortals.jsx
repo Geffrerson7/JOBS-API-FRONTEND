@@ -45,7 +45,7 @@ const WebPortals = () => {
     };
 
     fetchWebPortals();
-  }, [authTokens, cachedData]);
+  }, [authTokens, cachedData, userData]);
   
   return (
     <Layout>
