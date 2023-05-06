@@ -1,8 +1,10 @@
 import React from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const WebPortalCard = ({ webPortal }) => {
+  const navigate = useNavigate();
   return (
     <div className="bg-white rounded-2xl p-6 flex gap-4 drop-shadow-lg mt-2">
       {/* Icon */}
@@ -25,7 +27,9 @@ const WebPortalCard = ({ webPortal }) => {
         </p>
       </div>
       <div className="w-[10%] flex flex-col">
-        <button className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-1 px-2 rounded-md mb-2 text-xs flex flex-row items-center">
+        <button className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-1 px-2 rounded-md mb-2 text-xs flex flex-row items-center"
+        onClick={() => navigate(`/web-portals/${webPortal.id}`)}
+        >
           <AiFillEdit className="mr-2" />
           Edit
         </button>
