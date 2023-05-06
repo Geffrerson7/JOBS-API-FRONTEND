@@ -1,8 +1,10 @@
 import React from "react";
 import {AiFillEdit} from 'react-icons/ai'
 import {MdDelete} from 'react-icons/md'
+import { useNavigate } from "react-router-dom";
 
 const JobCard = ({ job }) => {
+  const navigate = useNavigate();
   return (
     <div className="bg-white rounded-2xl p-6 flex gap-4 drop-shadow-lg mt-2">
       {/* Icon */}
@@ -22,7 +24,10 @@ const JobCard = ({ job }) => {
         <p className="text-blue-400 text-xs">{job.publicationDate}</p>
       </div>
       <div className="w-[10%] flex flex-col">
-        <button className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-1 px-2 rounded-md mb-2 text-xs flex flex-row items-center"><AiFillEdit className="mr-2"/>Edit</button>
+        <button 
+        className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-1 px-2 rounded-md mb-2 text-xs flex flex-row items-center"
+        onClick={() => navigate(`/${job.id}`)}
+        ><AiFillEdit className="mr-2"/>Edit</button>
         <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-md text-xs flex flex-row items-center"><MdDelete className="mr-2"/>Delete</button>
       </div>
     </div>

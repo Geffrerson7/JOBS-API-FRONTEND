@@ -2,6 +2,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import refreshToken from "../services/refreshtoken";
 
 const CreateJob = () => {
   const [webPortal, setWebPortal] = useState("");
@@ -166,9 +167,9 @@ const CreateJob = () => {
                 onChange={(e) => setModality(e.target.value)}
               >
                 <option value="">Select modality</option>
-                <option value="remote">Remote</option>
-                <option value="hybrid">Hybrid</option>
-                <option value="present">Present</option>
+                <option value="Remote">Remote</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Presential">Presential</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 py-10 text-gray-700">
                 <MdKeyboardArrowDown />

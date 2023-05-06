@@ -44,7 +44,7 @@ const Jobs = () => {
 
     fetchJobs();
   }, [authTokens, cachedData, userData]);
-
+  
   return (
     <Layout>
       <div className="app">

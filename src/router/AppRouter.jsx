@@ -6,6 +6,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import CreateJob from "../components/CreateJob";
 import CreateWebPortal from "../components/CreateWebPortal";
+import UpdateJob from "../components/UpdateJob";
 
 const AppRouter = () => {
   const authTokens = JSON.parse(localStorage.getItem("authTokens"));
@@ -27,6 +28,10 @@ const AppRouter = () => {
         <Route
           path="/create-web-portal"
           element={authTokens ? <CreateWebPortal /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/:id"
+          element={authTokens ? <UpdateJob /> : <Navigate to="/login" />}
         />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
