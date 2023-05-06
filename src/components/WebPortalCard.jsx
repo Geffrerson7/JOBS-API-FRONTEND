@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillEdit } from "react-icons/ai";
-import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import DeleteWebPortal from "../services/DeleteWebPortal";
 
 const WebPortalCard = ({ webPortal }) => {
   const navigate = useNavigate();
@@ -33,10 +33,7 @@ const WebPortalCard = ({ webPortal }) => {
           <AiFillEdit className="mr-2" />
           Edit
         </button>
-        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-md text-xs flex flex-row items-center">
-          <MdDelete className="mr-2" />
-          Delete
-        </button>
+        <DeleteWebPortal id={webPortal.id}/>
       </div>
     </div>
   );

@@ -3,14 +3,14 @@ import axios from "axios";
 import refreshToken from "./refreshtoken";
 import { MdDelete } from "react-icons/md";
 
-const DeleteJob = ({ id }) => {
-  const BASE_URL = `http://127.0.0.1:8000/job/${id}/`;
+const DeleteWebPortal = ({ id }) => {
+  const BASE_URL = `http://127.0.0.1:8000/web-portal/${id}/`;
   const userData = JSON.parse(localStorage.getItem("userData"));
   const authTokens = JSON.parse(localStorage.getItem("authTokens"));
   const [accessToken, setAccessToken] = useState(authTokens.access);
   const today = new Date().toISOString().replace("T", " ").slice(0, 19);
 
-  const handleDeleteJob = async () => {
+  const handleDeleteWebPortal = async () => {
     try {
       if (userData.expirated_date === today) {
         const newAccessToken = await refreshToken(authTokens.refresh);
@@ -40,7 +40,7 @@ const DeleteJob = ({ id }) => {
               if (response.status === 204) {
                 Swal.fire(
                   "Deleted!",
-                  "The job was successfully deleted.",
+                  "The web portal was successfully deleted.",
                   "success"
                 ).then((result) => {
                   if (result.isConfirmed) {
@@ -63,7 +63,7 @@ const DeleteJob = ({ id }) => {
   return (
     <button
       className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-md text-xs flex flex-row items-center"
-      onClick={handleDeleteJob}
+      onClick={handleDeleteWebPortal}
     >
       <MdDelete className="mr-2" />
       Delete
@@ -71,4 +71,4 @@ const DeleteJob = ({ id }) => {
   );
 };
 
-export default DeleteJob;
+export default DeleteWebPortal;

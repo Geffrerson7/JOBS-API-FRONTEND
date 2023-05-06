@@ -84,7 +84,7 @@ const CreateJob = () => {
           "success"
         ).then((result) => {
           if (result.isConfirmed) {
-            location.reload();
+            navigate("/");
           }
         });
       }
@@ -94,7 +94,6 @@ const CreateJob = () => {
         title: "Oops...",
         text: "An error occurred!",
       });
-      console.log(error);
     }
   };
 

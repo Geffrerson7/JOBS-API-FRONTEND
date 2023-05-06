@@ -1,14 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Logout from "./Logout";
 
 const ListHeader = ({ listName }) => {
   const navigate = useNavigate();
-
-  const signOut = () => {
-    localStorage.clear();
-    navigate("/login");
-  };
 
   return (
     <div className="list-header">
@@ -27,13 +22,7 @@ const ListHeader = ({ listName }) => {
         >
           ADD NEW WEB PORTAL
         </button>
-
-        <button
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
-          onClick={signOut}
-        >
-          SIGN OUT
-        </button>
+        <Logout />
       </div>
     </div>
   );

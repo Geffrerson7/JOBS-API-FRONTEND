@@ -49,7 +49,7 @@ const CreateWebPortal = () => {
           "success"
         ).then((result) => {
           if (result.isConfirmed) {
-            location.reload();
+            navigate("/web-portals");
           }
         });
       }
