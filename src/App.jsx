@@ -1,12 +1,9 @@
 import "./App.css";
 import AppRouter from "./router/AppRouter";
-import ListHeader from "./components/ListHeader";
+import React from "react";
 
 const App = () => {
-  return (
-    
-    <AppRouter />
-  )
-}
+  return <AppRouter />;
+};
 
 export default App;

@@ -36,7 +36,7 @@ const JobCard = ({ job }) => {
           <AiFillEdit className="mr-2" />
           Edit
         </button>
-        <DeleteJob />
+        <DeleteJob id={job.id}/>
       </div>
     </div>
   );
