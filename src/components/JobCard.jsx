@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import DeleteJob from "../services/deleteJob";
+import DeleteJob from "../services/DeleteJob";
 
 const JobCard = ({ job }) => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const JobCard = ({ job }) => {
           <AiFillEdit className="mr-2" />
           Edit
         </button>
-        <DeleteJob id={job.id} />
+        <DeleteJob />
       </div>
     </div>
   );

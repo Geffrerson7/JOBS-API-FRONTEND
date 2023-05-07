@@ -33,10 +33,11 @@ const AppRouter = () => {
         <Route
           path="/:id"
           element={authTokens ? <UpdateJob /> : <Navigate to="/login" />}
-        /><Route
-        path="/web-portals/:id"
-        element={authTokens ? <UpdateWebPortal /> : <Navigate to="/login" />}
-      />
+        />
+        <Route
+          path="/web-portals/:id"
+          element={authTokens ? <UpdateWebPortal /> : <Navigate to="/login" />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

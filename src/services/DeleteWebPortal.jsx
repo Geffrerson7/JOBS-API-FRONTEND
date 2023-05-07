@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import refreshToken from "./refreshtoken";
+import refreshToken from "./refreshToken";
 import { MdDelete } from "react-icons/md";
 
 const DeleteWebPortal = ({ id }) => {

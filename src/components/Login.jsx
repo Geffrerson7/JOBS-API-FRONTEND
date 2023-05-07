@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import userDatas from "../services/userDatas";
+import loggedUserData from "../services/LoggedUserData";
 import axios from "axios";
 
 const Login = () => {
@@ -28,7 +28,7 @@ const Login = () => {
 
       if (response.status === 200) {
         localStorage.setItem("authTokens", JSON.stringify(data));
-        const userData = await userDatas(data.user_id);
+        const userData = await loggedUserData(data.user_id);
         localStorage.setItem("userData", JSON.stringify(userData));
         navigate("/");
       }

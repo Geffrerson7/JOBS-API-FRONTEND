@@ -2,7 +2,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import refreshToken from "../services/refreshtoken";
+import refreshToken from "../services/refreshToken";
 
 const CreateJob = () => {
   const [webPortal, setWebPortal] = useState("");

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import refreshToken from "../services/refreshtoken";
+import refreshToken from "../services/refreshToken";
 
 const UpdateWebPortal = () => {
   const params = useParams();
